@@ -29,7 +29,16 @@ namespace PhotoAlbum
                 if (choice != 999 && (choice > 100 || choice < 1))
                 {
                     Console.Write("You have entered an invalid album number. Please try again.\n");
-                    choice = Int32.Parse(Console.ReadLine());
+                    validInput = int.TryParse(Console.ReadLine(), out choice);
+                    if (choice == -1)
+                    {
+                        return;
+                    }
+                    while (validInput == false)
+                    {
+                        Console.Write("Please enter numeric values between 1 and 100 only. Please try again.\n");
+                        validInput = int.TryParse(Console.ReadLine(), out choice);
+                    }
                 }
 
                 List<Photo> albumList = GetAlbum(choice);
