@@ -50,7 +50,7 @@ namespace PhotoAlbum
                     }
                     Console.WriteLine("[{0}] {1} ", p.id, p.title);
                 }
-                Console.Write("Please Enter An Album Number bwtween 1 and 100.Enter 999 for all albums or - 1 to exit.\n");
+                Console.Write("Please Enter An Album Number between 1 and 100. Enter 999 for all albums or - 1 to exit.\n");
 
                validInput = int.TryParse(Console.ReadLine(), out choice);
                 while (validInput == false)
